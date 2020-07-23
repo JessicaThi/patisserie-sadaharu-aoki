@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pâtisserie Sadaharu Aoki Paris</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
@@ -52,29 +56,48 @@
       </div>
     </header>
     <main>
-      <div>
-        <h1>Sadaharu Aoki, la pâtisseire franco-japonaise</h1>
-        <p>
-          un équilibre entre 2 cultures ressenti dans ses douceurs sucrées et
-          colorés
-        </p>
-        <button>Passer une commande</button>
-      </div>
-      <div>
-        <img src="images/choux-a-la-creme.png" alt="" />
-        <img src="images/individuel-chocolat.png" alt="" />
-        <img src="images/individuel.png" alt="" />
-        <img src="images/individuel-2.png" alt="" />
-      </div>
-      <div class="ingredients">
-        <img src="images/framboise.png" alt="" />
-        <img src="images/fruit-sec.png" alt="" />
-        <img src="images/fruit-sec2.png" alt="" />
-        <img src="images/fruit-sec3.png" alt="" />
-        <img src="images/myrtille.png" alt="" />
-        <img src="images/noisette.png" alt="" />
-        <img src="images/noisette2.png" alt="" />
+      <svg
+        width="851"
+        height="846"
+        viewBox="0 0 851 846"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M440 760.5C103.903 584.521 2 -26.5 2 -26.5H909.5V803.5C909.5 803.5 808.5 849.205 716 845C623.5 840.795 507.361 795.77 440 760.5Z"
+          fill="#FFDF8E"
+        />
+      </svg>
+      <div class="content">
+        <div class="introduction">
+          <h1>Sadaharu Aoki, la pâtisserie franco-japonaise</h1>
+          <p>
+            un équilibre entre 2 cultures ressenti dans ses douceurs sucrées et
+            colorés
+          </p>
+          <button>Passer une commande</button>
+        </div>
+        <div class="items">
+          <img src="images/choux-a-la-creme.png" alt="" />
+          <img src="images/individuel-chocolat.png" alt="" />
+          <img src="images/individuel.png" alt="" />
+          <img src="images/individuel-2.png" alt="" />
+        </div>
+        <div id="scene" class="ingredients">
+          <img data-depth=".2" src="images/framboise.png" alt="" />
+          <img data-depth="-.1" src="images/fruit-sec.png" alt="" />
+          <img data-depth="-.3" src="images/fruit-sec2.png" alt="" />
+          <img data-depth="0.6" src="images/fruit-sec3.png" alt="" />
+          <img data-depth="-.5" src="images/myrtille.png" alt="" />
+          <img data-depth="0.2" src="images/noisette.png" alt="" />
+          <img data-depth="0.3" src="images/noisette2.png" alt="" />
+        </div>
       </div>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script>
+      var scene = document.getElementById("scene");
+      var parallaxInstance = new Parallax(scene);
+    </script>
   </body>
 </html>
