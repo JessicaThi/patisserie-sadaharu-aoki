@@ -11,6 +11,39 @@
     />
   </head>
   <body>
+    <div class="overlay">
+      <svg width="20%" height="auto" viewBox="0 0 274 123" version="1.1">
+        <title>pâtisserie Sadaharu</title>
+        <g
+          stroke="none"
+          stroke-width="1"
+          fill="none"
+          fill-rule="evenodd"
+          font-family="STHeitiSC-Medium, Heiti SC"
+          font-size="34"
+          font-weight="bold"
+          letter-spacing="2"
+          line-spacing="45"
+        >
+          <text id="patisserie-sadaharu">
+            <tspan x="0" y="21" fill="#909090">p</tspan>
+            <tspan x="25.188" y="21" fill="#121212">â</tspan>
+            <tspan x="50.41" y="21" fill="#909090">ti</tspan>
+            <tspan x="72.736" y="21" fill="#121212">ss</tspan>
+            <tspan x="103.12" y="21" fill="#909090">erie</tspan>
+            <tspan x="0" y="66" fill="#121212">Sa</tspan>
+            <tspan x="44.154" y="66" fill="#909090">d</tspan>
+            <tspan x="69.444" y="66" fill="#121212">a</tspan>
+            <tspan x="94.666" y="66" fill="#909090">h</tspan>
+            <tspan x="117.406" y="66" fill="#121212">a</tspan>
+            <tspan x="142.628" y="66" fill="#909090">ru</tspan>
+            <tspan x="188.034" y="66" fill="#121212">A</tspan>
+            <tspan x="215.194" y="66" fill="#909090">OKI</tspan>
+            <tspan x="0" y="111" fill="#909090">paris</tspan>
+          </text>
+        </g>
+      </svg>
+    </div>
     <header>
       <svg
         width="553px"
@@ -94,10 +127,60 @@
         </div>
       </div>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <script>
       var scene = document.getElementById("scene");
       var parallaxInstance = new Parallax(scene);
+
+      TweenMax.to(".overlay svg", 2, {
+        y: -100,
+        opacity: 0,
+        ease: Expo.easeInOut,
+      });
+
+      TweenMax.to(".overlay", 2, {
+        delay: 1,
+        right: "-100%",
+        ease: Expo.easeInOut,
+      });
+
+      TweenMax.from("header", 2, {
+        delay: 2,
+        opacity: 0,
+        y: -20,
+        ease: Expo.easeInOut,
+      });
+
+      TweenMax.from(".introduction h1", 1.5, {
+        delay: 2,
+        opacity: 0,
+        ease: Expo.easeInOut,
+      });
+
+      TweenMax.from(".introduction p", 1.5, {
+        delay: 2,
+        opacity: 0,
+        ease: Expo.easeInOut,
+      });
+
+      TweenMax.from(".introduction button", 1.5, {
+        delay: 2,
+        opacity: 0,
+        ease: Expo.easeInOut,
+      });
+
+      TweenMax.staggerFrom(".items img", 2, {
+        delay: 2,
+        opacity: 0,
+        ease: Expo.easeInOut,
+      });
+
+      TweenMax.staggerFrom(".ingredients img", 4, {
+        delay: 2,
+        opacity: 0,
+        ease: Expo.easeInOut,
+      });
     </script>
   </body>
 </html>
