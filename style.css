@@ -7,6 +7,11 @@
 :root {
   --yellow: #ffd15b;
   --black: #121212;
+  --white: #f5f5f5;
+}
+
+#overlay-mobile {
+  display: none;
 }
 
 .overlay {
@@ -23,6 +28,24 @@
 body {
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
+  color: var(--color);
+  background: var(--background);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color: #121212;
+    --background: #f8f8f8;
+    --text: "light";
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color: #f8f8f8;
+    --background: #121212;
+    --text: "dark";
+  }
 }
 
 header {
@@ -76,8 +99,8 @@ main {
 
 main > svg {
   position: absolute;
-  top: -100px;
-  right: -40%;
+  top: -530px;
+  right: -90%;
   z-index: -1;
 }
 
@@ -202,4 +225,74 @@ main > svg {
   width: 35px;
   top: -270px !important;
   left: 100px !important;
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    position: fixed;
+  }
+
+  #overlay-mobile {
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    overflow: hidden;
+  }
+
+  #text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 2rem;
+    text-align: center;
+    color: var(--white);
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+  main {
+    width: 100%;
+  }
+
+  .introduction {
+    width: 100%;
+  }
+
+  .items {
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+
+  .content {
+    padding: 0 20px;
+  }
+
+  .items img:first-child {
+    top: 4%;
+    left: 62%;
+  }
+
+  .items img:nth-child(2) {
+    top: 8%;
+    left: -9%;
+  }
+
+  .items img:nth-child(3) {
+    top: 48%;
+    left: -4%;
+  }
+
+  .items img:last-child {
+    top: 42%;
+    left: 6%;
+  }
 }
